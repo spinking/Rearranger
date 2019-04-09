@@ -6,6 +6,7 @@ public class MyView extends ViewModel {
 
     private String editField = "";
     private String textField = "";
+    private boolean progressVisibility = false;
 
     public MyView(String editField, String textField) {
         this.editField = editField;
@@ -21,6 +22,7 @@ public class MyView extends ViewModel {
     public void setEditField(String editText) {
         this.editField = editText;
     }
+
     public String getTextField() {
         return textField;
     }
@@ -29,5 +31,12 @@ public class MyView extends ViewModel {
     }
     public  void setTextField(String textView) {
         this.textField = textView;
+    }
+
+    public boolean getProgressVisibility() {
+        return progressVisibility;
+    }
+    public void setProgressVisibility(boolean progVis) {
+        this.progressVisibility = progVis;
     }
 }

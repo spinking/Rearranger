@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.getIndeterminateDrawable().setColorFilter(0xFFAA3939, android.graphics.PorterDuff.Mode.MULTIPLY);
+        if(myView.getProgressVisibility()) {
+            progressBar.setVisibility(ProgressBar.VISIBLE);
+        }
         edit = (EditText) findViewById(R.id.editText);
         edit.setText(myView.getEditField());
         textViewer = (TextView) findViewById(R.id.textView3);
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         protected  void onPreExecute() {
             super.onPreExecute();
             progressBar.setVisibility(ProgressBar.VISIBLE);
+            myView.setProgressVisibility(true);
             textViewer.setText("");
         }
         @Override
@@ -54,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             super.onPostExecute(result);
             textViewer.setMovementMethod(new ScrollingMovementMethod());
             progressBar.setVisibility(ProgressBar.INVISIBLE);
+            myView.setProgressVisibility(false);
 
             if(under.res.size() != 0) {
                 for(String s : under.res) {
