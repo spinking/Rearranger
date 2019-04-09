@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(under.res.size() != 0) {
                 for(String s : under.res) {
-                    myView.setTextField(s);
+                    myView.addTextField(s);
                 }
             } else {
                 textViewer.append("No words");
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         content = edit.getText().toString();
         myView.setEditField(content);
+        myView.setTextField("");
 
         MyTask myTask = new MyTask();
         myTask.execute();

@@ -24,7 +24,10 @@ public class MyView extends ViewModel {
     public String getTextField() {
         return textField;
     }
-    public void setTextField(String textView) {
+    public void addTextField(String textView) {
         this.textField += textView + "\n";
+    }
+    public  void setTextField(String textView) {
+        this.textField = textView;
     }
 }
