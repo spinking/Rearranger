@@ -7,4 +7,4 @@ Issues that's not embodied:
 
 1. Add responsive view.
 1. Saving activity when system changes configuration.
-<del>1. Optimize creating variants of words.Dont create words that are composed of only vowels or only consonants.<del/>
+1. <del>Optimize creating variants of words.Dont create words that are composed of only vowels or only consonants.<del/>
