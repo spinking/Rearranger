@@ -5,8 +5,6 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -61,9 +59,6 @@ public class UnderCover extends IOException {
             try{
                 if(fileInputStream!= null) {
                     fileInputStream.close();
-
-                    //this.res.clear();
-                    //set.clear();
                 }
             } catch(IOException ex) {
                 Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
