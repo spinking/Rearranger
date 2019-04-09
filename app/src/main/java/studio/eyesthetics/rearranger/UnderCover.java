@@ -55,7 +55,7 @@ public class UnderCover extends IOException {
             }
 
         } catch(Exception a){
-            //Toast.makeText(context, a.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, a.getMessage(), Toast.LENGTH_SHORT).show();
         }
         finally{
             try{
@@ -66,7 +66,7 @@ public class UnderCover extends IOException {
                     //set.clear();
                 }
             } catch(IOException ex) {
-                //Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, ex.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
