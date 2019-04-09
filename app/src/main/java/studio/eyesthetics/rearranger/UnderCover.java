@@ -54,6 +54,7 @@ public class UnderCover extends IOException {
             try{
                 if(fileInputStream!= null) {
                     fileInputStream.close();
+
                     //this.res.clear();
                     //set.clear();
                 }
