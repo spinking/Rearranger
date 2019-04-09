@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private UnderCover under;
     private String content;
 
+    MyTask mt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,8 +67,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         content = edit.getText().toString();
-        MyTask myTask = new MyTask();
-        myTask.execute();
 
+        mt = (MyTask) getLastCustomNonConfigurationInstance();
+
+        if(mt == null) {
+            mt = new MyTask();
+            mt.execute();
+        }
+
+    }
+
+    public Object onRetainCustomNonConfigurationInstance() {
+        return mt;
     }
 }
