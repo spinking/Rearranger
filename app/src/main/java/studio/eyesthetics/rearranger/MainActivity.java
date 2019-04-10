@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         edit = (EditText) findViewById(R.id.editText);
         edit.setText(myView.getEditField());
         textViewer = (TextView) findViewById(R.id.textView3);
+        textViewer.setMovementMethod(new ScrollingMovementMethod());
         textViewer.setText(myView.getTextField());
         content = "";
         under = new UnderCover(this);
@@ -56,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            textViewer.setMovementMethod(new ScrollingMovementMethod());
             progressBar.setVisibility(ProgressBar.INVISIBLE);
             myView.setProgressVisibility(false);
 
@@ -64,11 +64,10 @@ public class MainActivity extends AppCompatActivity {
                 for(String s : under.res) {
                     myView.addTextField(s);
                 }
+                textViewer.setText(myView.getTextField());
             } else {
                 textViewer.append("No words");
             }
-
-            textViewer.setText(myView.getTextField());
 
             under.res.clear();
             under.set.clear();
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         content = edit.getText().toString();
         myView.setEditField(content);
-        myView.setTextField("");
 
         MyTask myTask = new MyTask();
         myTask.execute();
