@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         content = edit.getText().toString();
         myView.setEditField(content);
+        myView.setTextField("");
 
         MyTask myTask = new MyTask();
         myTask.execute();
