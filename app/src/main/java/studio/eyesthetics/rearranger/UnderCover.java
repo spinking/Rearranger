@@ -22,9 +22,7 @@ public class UnderCover extends IOException {
 
 
     public void rearrange (String prefix, String str){
-        if(prefix.matches("^[аеёиоуэюя]*$") || prefix.matches("^[бвгджзклмнпрстфхцчшщьъ]*$")) {
-
-        } else {
+        if(!(prefix.matches("^[аеёиоуэюя]*$") || prefix.matches("^[бвгджзклмнпрстфхцчшщьъ]*$"))) {
             set.add(prefix);
         }
         for (char ch : str.toCharArray()) {
